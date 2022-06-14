@@ -3,7 +3,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package student_information_system;
-
+import java.awt.Component;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author INKILU
@@ -17,6 +25,39 @@ public class Login extends javax.swing.JFrame {
         initComponents();
     }
 
+    public static Connection myConnection(){
+
+                        Connection con = null;
+
+try{
+
+Class.forName("com.mysql.jdbc.Driver"); // load the  JDBC driver for MySQL.
+
+ 
+
+String connectionUrl="jdbc:mysql://localhost:3306/sampledb?"+"user=root&password="; //    
+
+
+con = DriverManager.getConnection(connectionUrl);  //  establish a database connection with the server via its getConnection() method
+
+      
+
+        } catch (ClassNotFoundException ex) {
+
+     Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+
+        } catch (SQLException ex) {
+
+     Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+
+         return con;
+
+      
+
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -124,6 +165,7 @@ public class Login extends javax.swing.JFrame {
         String passfield = jPasswordField1.getText();  
         System.out.println(userfield);
         System.out.println(passfield);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
