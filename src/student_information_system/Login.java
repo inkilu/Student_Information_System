@@ -33,17 +33,10 @@ try{
 
 Class.forName("com.mysql.jdbc.Driver"); // load the  JDBC driver for MySQL.
 
- 
-
-String connectionUrl="jdbc:mysql://localhost:3306/sampledb?"+"user=root&password="; //    
-
-
-con = DriverManager.getConnection(connectionUrl);  //  establish a database connection with the server via its getConnection() method
-
-      
+String connectionUrl="jdbc:mysql://localhost:3306/sis?"+"user=root&password=root"; //    
+con = DriverManager.getConnection(connectionUrl);
 
         } catch (ClassNotFoundException ex) {
-
      Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
 
         } catch (SQLException ex) {
@@ -51,11 +44,7 @@ con = DriverManager.getConnection(connectionUrl);  //  establish a database conn
      Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
 
         }
-
          return con;
-
-      
-
     }
     
     /**
@@ -74,6 +63,7 @@ con = DriverManager.getConnection(connectionUrl);  //  establish a database conn
         jPasswordField1 = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,6 +94,11 @@ con = DriverManager.getConnection(connectionUrl);  //  establish a database conn
 
         jLabel3.setIcon(new javax.swing.ImageIcon("D:\\Java Project\\Student_Information_System\\assets\\login.png")); // NOI18N
 
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("STUDENT INFORMATION SYSTEM");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -117,21 +112,26 @@ con = DriverManager.getConnection(connectionUrl);  //  establish a database conn
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(297, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(240, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1)
                         .addGap(362, 362, 362))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addGap(327, 327, 327))))
+                        .addGap(327, 327, 327))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(210, 210, 210))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(97, Short.MAX_VALUE)
+                .addContainerGap(53, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(29, 29, 29)
                 .addComponent(jLabel3)
                 .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -163,9 +163,12 @@ con = DriverManager.getConnection(connectionUrl);  //  establish a database conn
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String userfield = jTextField1.getText();  
         String passfield = jPasswordField1.getText();  
+        Connection con = myConnection();
+        Admin page = new Admin();
+        page.setVisible(true);
+        dispose();
         System.out.println(userfield);
         System.out.println(passfield);
-        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -212,6 +215,7 @@ con = DriverManager.getConnection(connectionUrl);  //  establish a database conn
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
