@@ -163,10 +163,34 @@ con = DriverManager.getConnection(connectionUrl);
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String userfield = jTextField1.getText();  
         String passfield = jPasswordField1.getText();  
-        Connection con = myConnection();
-        Admin page = new Admin();
-        page.setVisible(true);
-        dispose();
+        
+      try{
+Connection con = myConnection();
+
+PreparedStatement prest;
+
+String sql ="select * from login where username='"+userfield+"'and password='"+passfield+"'";
+
+prest= con.prepareStatement(sql);
+
+ResultSet rs = prest.executeQuery(sql);
+
+if(rs.next()){
+    dispose();
+    Admin page = new Admin();
+    page.show();
+}else{
+ JOptionPane.showMessageDialog(this,"Username or Password Wrong");
+
+}
+con.close();
+
+       }catch (SQLException ex) {
+
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+
         System.out.println(userfield);
         System.out.println(passfield);
     }//GEN-LAST:event_jButton1ActionPerformed
