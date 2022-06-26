@@ -61,9 +61,9 @@ public class Login extends javax.swing.JFrame {
             String connectionUrl="jdbc:mysql://localhost:3306/sis?"+"user=root&password=root"; //    
             con = DriverManager.getConnection(connectionUrl);
         } catch (ClassNotFoundException ex) {
-     Logger.getLogger(Logins.class.getName()).log(Level.SEVERE, null, ex);
+     Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-     Logger.getLogger(Logins.class.getName()).log(Level.SEVERE, null, ex);
+     Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
         return con;
     }
@@ -210,7 +210,7 @@ public class Login extends javax.swing.JFrame {
 
             }catch (SQLException ex) {
 
-            Logger.getLogger(Logins.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
 
             }
         System.out.println(userfield);
