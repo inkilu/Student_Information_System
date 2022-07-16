@@ -28,6 +28,7 @@ public class Admin extends javax.swing.JFrame {
         setAttendaceTableData();
         setTimeTableTableData();
         setTerm1Marks();
+        setTerm2Marks();
     }
 
     // Database Connection
@@ -138,6 +139,50 @@ while(rs.next()){
         }
 
 }
+    
+    // Display Term 2 Marks
+    
+    private void setTerm2Marks(){
+
+    Connection con = myConnection();
+
+       try{
+
+PreparedStatement prest;
+
+String sql ="select student_info.sid,name,eng_t2,sci_t2,ss_t2,math_t2,mal_t2,grade_t2 from marks,student_info where marks.sid = student_info.sid;";
+
+prest= con.prepareStatement(sql);
+
+ResultSet rs = prest.executeQuery(sql);
+
+while(rs.next()){
+
+   String mid  = String.valueOf(rs.getInt("sid"));
+   String fn = rs.getString("name");
+   String mn = rs.getString("eng_t2");
+   String jul = rs.getString("sci_t2");
+   String aug = rs.getString("ss_t2");
+   String sept = rs.getString("math_t2");
+   String mal = rs.getString("mal_t2");
+   String grd = rs.getString("grade_t2");
+
+            String tbData[]={mid,fn,mn,jul,aug,sept,mal,grd};
+
+            DefaultTableModel tblModel=(DefaultTableModel)jTable2.getModel();
+
+            tblModel.addRow(tbData);
+
+       }
+
+       }catch (SQLException ex) {
+
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+
+}
+    
     // Display Time Table
     
         private void setTimeTableTableData(){
@@ -486,6 +531,11 @@ while(rs.next()){
                 return types [columnIndex];
             }
         });
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jTable2.setBackground(new java.awt.Color(60, 63, 65));
@@ -504,6 +554,11 @@ while(rs.next()){
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+        });
+        jTable2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable2MouseClicked(evt);
             }
         });
         jScrollPane2.setViewportView(jTable2);
@@ -539,18 +594,6 @@ while(rs.next()){
         jLabel28.setBackground(new java.awt.Color(255, 255, 255));
         jLabel28.setForeground(new java.awt.Color(255, 255, 255));
         jLabel28.setText("Grade");
-
-        jTextField16.setText("jTextField16");
-
-        jTextField17.setText("jTextField17");
-
-        jTextField18.setText("jTextField18");
-
-        jTextField19.setText("jTextField19");
-
-        jTextField20.setText("jTextField20");
-
-        jTextField21.setText("jTextField21");
 
         jRadioButton1.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup1.add(jRadioButton1);
@@ -596,27 +639,27 @@ while(rs.next()){
                             .addComponent(jLabel24)
                             .addComponent(jLabel23))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(34, 34, 34)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField16, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                            .addComponent(jTextField17))
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextField18)
+                            .addComponent(jTextField19))
                         .addGap(30, 30, 30)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField20, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                            .addComponent(jTextField21))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jRadioButton2)
                             .addComponent(jRadioButton1))))
@@ -958,6 +1001,7 @@ while(rs.next()){
      sn.setText("");
 
  } */
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
      Connection con = myConnection();
@@ -1006,16 +1050,145 @@ id =0;
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:                                              
         // TODO add your handling code here:
-        String termCheck="";
+     Connection con = myConnection();
+
+        if(id !=0){
+
+           String junval= jTextField16.getText();
+           String julval= jTextField17.getText();
+           String augval= jTextField18.getText();
+           String septval= jTextField19.getText();
+           String octval= jTextField20.getText();
+           String novval= jTextField21.getText();
+try{
+   String sql ="";  
+   PreparedStatement prest;
+
+//String sql ="update marks set jun='"+junval+"',jul='"+julval+"',aug='"+augval+"',sept='"+septval+"',oct='"+octval+"',nov='"+novval+"',dece='"+decval+"',jan='"+janval+"',feb='"+febval+"',mar='"+marval+"'where sid='"+id+"'";
+//String sql ="update marks set eng='"+junval+"',sci='"+julval+"',ss='"+augval+"',math='"+septval+"',mal='"+octval+"',grade='"+novval+"'where sid='"+id+"'";
         if(jRadioButton1.isSelected()){
-        termCheck="Term1";
+        sql="update marks set eng='"+junval+"',sci='"+julval+"',ss='"+augval+"',math='"+septval+"',mal='"+octval+"',grade='"+novval+"'where sid='"+id+"'";
         }
         if(jRadioButton2.isSelected()){
-        termCheck="Term2";
+        sql="update marks set eng_t2='"+junval+"',sci_t2='"+julval+"',ss_t2='"+augval+"',math_t2='"+septval+"',mal_t2='"+octval+"',grade_t2='"+novval+"'where sid='"+id+"'";
         }
-        System.out.println(termCheck);
+        System.out.println(sql);
+// +"',sept'"+
+  prest= con.prepareStatement(sql);
+
+ prest.execute(sql);
+
+  dispose();
+Admin a = new Admin();
+ a.show();
+ con.close();
+
+//resetData();
+
+id =0;
+
+} catch (SQLException ex) {
+ Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+ }
+
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    // Term 1 mark click
+    
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        
+ id=Integer.parseInt(jTable1.getValueAt(jTable1.getSelectedRow(),0).toString());
+System.out.println(id);
+ Connection con = myConnection();
+
+try{
+
+PreparedStatement prest;
+
+String sql ="select eng,sci,ss,math,mal,grade from marks where sid="+id;
+
+prest= con.prepareStatement(sql);
+
+ResultSet rs = prest.executeQuery(sql);// PreparedStatement object’s executeQuery () method is called to execute the SQL SELECT statement, returning a ResultSet into rs.
+
+while(rs.next()){
+
+    jTextField16.setText(rs.getString("eng"));// Retrieves value of the second column in the current row, which is the username field
+
+    jTextField17.setText(rs.getString("sci"));
+
+    jTextField18.setText(rs.getString("ss"));
+
+    jTextField19.setText(rs.getString("math"));
+    
+    jTextField20.setText(rs.getString("mal"));
+    
+    jTextField21.setText(rs.getString("grade"));
+
+
+}
+
+ rs.close();
+
+ prest.close();
+
+   
+
+}       catch (SQLException ex) {
+
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+    }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable2MouseClicked
+        // Term 2 marks to the fields                                   
+ id=Integer.parseInt(jTable2.getValueAt(jTable2.getSelectedRow(),0).toString());
+System.out.println(id);
+ Connection con = myConnection();
+
+try{
+
+PreparedStatement prest;
+
+String sql ="select eng_t2,sci_t2,ss_t2,math_t2,mal_t2,grade_t2 from marks where sid="+id;
+
+prest= con.prepareStatement(sql);
+
+ResultSet rs = prest.executeQuery(sql);// PreparedStatement object’s executeQuery () method is called to execute the SQL SELECT statement, returning a ResultSet into rs.
+
+while(rs.next()){
+
+    jTextField16.setText(rs.getString("eng_t2"));// Retrieves value of the second column in the current row, which is the username field
+
+    jTextField17.setText(rs.getString("sci_t2"));
+
+    jTextField18.setText(rs.getString("ss_t2"));
+
+    jTextField19.setText(rs.getString("math_t2"));
+    
+    jTextField20.setText(rs.getString("mal_t2"));
+    
+    jTextField21.setText(rs.getString("grade_t2"));
+
+
+}
+
+ rs.close();
+
+ prest.close();
+
+   
+
+}       catch (SQLException ex) {
+
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+    }//GEN-LAST:event_jTable2MouseClicked
 public static int okcancel(String theMessage){
 
 int result=JOptionPane.showConfirmDialog((Component)null,theMessage,"alert",JOptionPane.OK_CANCEL_OPTION);
