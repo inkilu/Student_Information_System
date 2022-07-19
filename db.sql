@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `sis` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `sis`;
 -- MySQL dump 10.13  Distrib 8.0.29, for Win64 (x86_64)
 --
 -- Host: localhost    Database: sis
@@ -38,7 +40,7 @@ CREATE TABLE `attendance` (
   PRIMARY KEY (`att_id`),
   KEY `sid` (`sid`),
   CONSTRAINT `attendance_ibfk_1` FOREIGN KEY (`sid`) REFERENCES `student_info` (`sid`)
-) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,7 +49,7 @@ CREATE TABLE `attendance` (
 
 LOCK TABLES `attendance` WRITE;
 /*!40000 ALTER TABLE `attendance` DISABLE KEYS */;
-INSERT INTO `attendance` VALUES (101,23,23,45,11,54,54,54,54,54,23,1),(103,32,12,2,2,2,2,2,2,2,2,7),(104,3,4,5,2,16,43,32,55,30,11,8),(105,12,22,33,87,42,44,44,78,11,76,9),(106,0,0,0,0,0,12,0,0,0,0,10),(107,10,33,78,99,99,76,11,3,42,55,11),(108,0,0,0,0,0,0,0,0,0,0,12);
+INSERT INTO `attendance` VALUES (101,10,23,45,11,54,54,54,54,54,23,1),(103,32,12,2,2,2,2,2,2,2,2,7),(104,3,4,5,2,16,43,32,55,30,11,8),(105,12,22,33,87,42,44,44,78,11,76,9),(106,0,0,0,0,0,12,0,0,0,0,10),(107,10,33,78,99,99,76,11,3,42,55,11),(109,0,0,0,0,0,0,0,0,0,0,13),(110,0,0,0,0,0,0,0,0,0,0,14),(111,11,55,67,21,11,80,33,23,20,56,15);
 /*!40000 ALTER TABLE `attendance` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -101,7 +103,7 @@ CREATE TABLE `marks` (
   PRIMARY KEY (`mid`),
   KEY `sid_idx` (`sid`),
   CONSTRAINT `sid` FOREIGN KEY (`sid`) REFERENCES `student_info` (`sid`)
-) ENGINE=InnoDB AUTO_INCREMENT=203 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=205 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -110,7 +112,7 @@ CREATE TABLE `marks` (
 
 LOCK TABLES `marks` WRITE;
 /*!40000 ALTER TABLE `marks` DISABLE KEYS */;
-INSERT INTO `marks` VALUES (201,'21','23','43','23','32','B',3,NULL,NULL,NULL,NULL,NULL,NULL),(202,'44','33','22','23','43','C',1,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `marks` VALUES (202,'44','33','11','23','43','C',1,'44','33','11','23','43','A'),(203,'12','21','21','11','21','A',15,'33','22','61','21','90','A');
 /*!40000 ALTER TABLE `marks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -130,7 +132,7 @@ CREATE TABLE `student_info` (
   `dob` varchar(45) DEFAULT NULL,
   `Gname` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`sid`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -139,7 +141,7 @@ CREATE TABLE `student_info` (
 
 LOCK TABLES `student_info` WRITE;
 /*!40000 ALTER TABLE `student_info` DISABLE KEYS */;
-INSERT INTO `student_info` VALUES (1,'babu','12',NULL,'263638',NULL,NULL),(2,'lal','12','kochi','12-12-2995','9474834848','mohan'),(3,'Ganesh','LKG','Ganesh Bhavan','12-01-2000','9898767654','Babu'),(7,'Appu','11','Kottayam','12-10-2000','9876878987','Chan'),(8,'Loki','3','Kochu House','11-03-2039','456567654','Babu'),(9,'Yedu','10','Kannapi house','31-02-2000','987876547','TY'),(10,'Robert Pattinson','5','America 123Hs','12-03-2000','9878675678','Hamburger'),(11,'Daniel','12th','Africa','11/01/2000','1234224422','Smuchets'),(12,'s','adasda','dasdas','da','dada','da');
+INSERT INTO `student_info` VALUES (1,'babu','12',NULL,'263638',NULL,NULL),(2,'lal','12','kochi','12-12-2995','9474834848','mohan'),(7,'Appu','11','Kottayam','12-10-2000','9876878987','Chan'),(8,'Loki','3','Kochu House','11-03-2039','456567654','Babu'),(9,'Yedu','10','Kannapi house','31-02-2000','987876547','TY'),(10,'Robert Pattinson','5','America 123Hs','12-03-2000','9878675678','Hamburger'),(11,'Daniel','12th','Africa','11/01/2000','1234224422','Smuchets'),(13,'Alan P Babu','2','Alan Bhavan','11/02/2000','9878765721','Babumon PP'),(14,'Harish','7','Hari house, Kochi','12/02/2000','9878765671','Jayarag'),(15,'Rocky','hgdh','fhfhfg','hfghfg','hfghf','hfghfg');
 /*!40000 ALTER TABLE `student_info` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -155,6 +157,25 @@ DELIMITER ;;
 INSERT INTO `sis`.`attendance`
 (`jun`,`jul`,`aug`,`sept`,`oct`,`nov`,`dece`,`jan`,`feb`,`mar`,`sid`)VALUES
 (0,0,0,0,0,0,0,0,0,0,new.sid);
+insert into marks (sid) value (new.sid);
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `student_info_BEFORE_DELETE` BEFORE DELETE ON `student_info` FOR EACH ROW BEGIN
+delete from attendance where sid = old.sid;
+delete from marks where sid = old.sid;
 END */;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -188,7 +209,7 @@ CREATE TABLE `time_table` (
 
 LOCK TABLES `time_table` WRITE;
 /*!40000 ALTER TABLE `time_table` DISABLE KEYS */;
-INSERT INTO `time_table` VALUES (101,'Physics','English','Mal','Eng','Sci','SS','P.T'),(102,'English','Maths','SS','P.T','Sci','Mal','SS'),(103,'Maths','SS','Maths','Sci','Mal','Maths','English'),(104,'English','Sci','Mal','SS','Sci','P.T','P.T'),(105,'Mal','Eng','SS','Maths','Sci','P.T','Maths');
+INSERT INTO `time_table` VALUES (101,'Maths','English','Mal','Eng','Sci','SS','P.T'),(102,'English','Maths','SS','P.T','Sci','Mal','SS'),(103,'Maths','SS','Maths','Sci','Mal','Maths','English'),(104,'English','Sci','Mal','SS','Sci','P.T','P.T'),(105,'Mal','Eng','SS','Maths','Sci','P.T','Maths');
 /*!40000 ALTER TABLE `time_table` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -209,4 +230,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-10 23:45:42
+-- Dump completed on 2022-07-20  0:12:48
