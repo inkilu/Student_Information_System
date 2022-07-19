@@ -200,7 +200,7 @@ prest= con.prepareStatement(sql);
 ResultSet rs = prest.executeQuery(sql);
 
 while(rs.next()){
-
+   String tid = rs.getString("t_id");
    String h1  =rs.getString("h1");
    String h2 = rs.getString("h2");
    String h3 = rs.getString("h3");
@@ -209,7 +209,7 @@ while(rs.next()){
    String h6 = rs.getString("h6");
    String h7 = rs.getString("h7");
 
-            String tbData[]={h1,h2,h3,h4,h5,h6,h7};
+            String tbData[]={tid,h1,h2,h3,h4,h5,h6,h7};
 
             DefaultTableModel tblModel=(DefaultTableModel)jTable4.getModel();
 
@@ -296,10 +296,26 @@ while(rs.next()){
         jTextField5 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
+        jTextField22 = new javax.swing.JTextField();
+        jTextField23 = new javax.swing.JTextField();
+        jTextField24 = new javax.swing.JTextField();
+        jTextField25 = new javax.swing.JTextField();
+        jTextField26 = new javax.swing.JTextField();
+        jTextField27 = new javax.swing.JTextField();
+        jTextField28 = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -462,7 +478,7 @@ while(rs.next()){
                 .addComponent(jLabel12)
                 .addGap(311, 311, 311))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(353, 353, 353)
+                .addGap(349, 349, 349)
                 .addComponent(jButton2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -503,9 +519,9 @@ while(rs.next()){
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
                     .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(17, 17, 17)
                 .addComponent(jButton2)
-                .addGap(156, 156, 156))
+                .addGap(157, 157, 157))
         );
 
         jTabbedPane2.addTab("Attendance", jPanel2);
@@ -813,6 +829,14 @@ while(rs.next()){
         jLabel10.setText("Add a New Student");
         jLabel10.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
+        jButton5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButton5.setText("View Student Data");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -824,7 +848,10 @@ while(rs.next()){
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(298, 298, 298)
-                        .addComponent(jLabel10)))
+                        .addComponent(jLabel10))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(320, 320, 320)
+                        .addComponent(jButton5)))
                 .addContainerGap(85, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -834,7 +861,9 @@ while(rs.next()){
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(224, Short.MAX_VALUE))
+                .addGap(51, 51, 51)
+                .addComponent(jButton5)
+                .addContainerGap(147, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Add student", jPanel3);
@@ -847,10 +876,48 @@ while(rs.next()){
 
             },
             new String [] {
-                "Hour 1", "Hour  2", "Hour  3", "Hour  4", "Hour 5", "Hour 6", "Hour 7"
+                "Id", "Hour 1", "Hour  2", "Hour  3", "Hour  4", "Hour 5", "Hour 6", "Hour 7"
             }
         ));
+        jTable4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable4MouseClicked(evt);
+            }
+        });
         jScrollPane5.setViewportView(jTable4);
+
+        jTextField22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField22ActionPerformed(evt);
+            }
+        });
+
+        jTextField23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField23ActionPerformed(evt);
+            }
+        });
+
+        jLabel29.setText("Hour 1");
+
+        jLabel30.setText("Hour 2");
+
+        jLabel31.setText("Hour 3");
+
+        jLabel32.setText("Hour 4");
+
+        jLabel33.setText("Hour 5");
+
+        jLabel34.setText("Hour 6");
+
+        jLabel35.setText("Hour 7");
+
+        jButton4.setText("Update");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -863,8 +930,47 @@ while(rs.next()){
                         .addComponent(jLabel11))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(160, 160, 160)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(179, Short.MAX_VALUE))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(25, 25, 25)
+                                        .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                                .addGap(16, 16, 16)
+                                                .addComponent(jLabel35))
+                                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(33, 33, 33)
+                                                .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(jPanel5Layout.createSequentialGroup()
+                                        .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(93, 93, 93)
+                                        .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(276, 276, 276)
+                        .addComponent(jLabel34))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(176, 176, 176)
+                        .addComponent(jLabel29)
+                        .addGap(62, 62, 62)
+                        .addComponent(jLabel30)
+                        .addGap(56, 56, 56)
+                        .addComponent(jLabel31)
+                        .addGap(61, 61, 61)
+                        .addComponent(jLabel32)
+                        .addGap(65, 65, 65)
+                        .addComponent(jLabel33))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(345, 345, 345)
+                        .addComponent(jButton4)))
+                .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -873,7 +979,31 @@ while(rs.next()){
                 .addComponent(jLabel11)
                 .addGap(27, 27, 27)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(539, Short.MAX_VALUE))
+                .addGap(45, 45, 45)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(jLabel30)
+                    .addComponent(jLabel31)
+                    .addComponent(jLabel32)
+                    .addComponent(jLabel33))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel34)
+                    .addComponent(jLabel35))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
+                .addComponent(jButton4)
+                .addContainerGap(316, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Time Table", jPanel5);
@@ -1050,8 +1180,7 @@ id =0;
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:                                              
-        // TODO add your handling code here:
+
      Connection con = myConnection();
 
         if(id !=0){
@@ -1189,6 +1318,109 @@ while(rs.next()){
 
         }
     }//GEN-LAST:event_jTable2MouseClicked
+
+    private void jTextField22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField22ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField22ActionPerformed
+
+    private void jTextField23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField23ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField23ActionPerformed
+
+    private void jTable4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable4MouseClicked
+        // Time Table Mouse Clicked Event
+ id=Integer.parseInt(jTable4.getValueAt(jTable4.getSelectedRow(),0).toString());
+System.out.println(id);
+ Connection con = myConnection();
+
+try{
+
+PreparedStatement prest;
+
+String sql ="select * from time_table where t_id="+id;
+
+prest= con.prepareStatement(sql);
+
+ResultSet rs = prest.executeQuery(sql);// PreparedStatement object’s executeQuery () method is called to execute the SQL SELECT statement, returning a ResultSet into rs.
+
+while(rs.next()){
+
+    jTextField22.setText(rs.getString("h1"));// Retrieves value of the second column in the current row, which is the username field
+
+    jTextField23.setText(rs.getString("h2"));
+
+    jTextField24.setText(rs.getString("h3"));
+
+    jTextField25.setText(rs.getString("h4"));
+    
+    jTextField26.setText(rs.getString("h5"));
+    
+    jTextField27.setText(rs.getString("h6"));
+    
+    jTextField28.setText(rs.getString("h7"));
+} 
+
+ rs.close();
+
+ prest.close();
+
+   
+
+}       catch (SQLException ex) {
+
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+
+ 
+    }//GEN-LAST:event_jTable4MouseClicked
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+
+     Connection con = myConnection();
+
+        if(id !=0){
+
+           String junval= jTextField22.getText();
+           String julval= jTextField23.getText();
+           String augval= jTextField24.getText();
+           String septval=jTextField25.getText();
+           String octval= jTextField26.getText();
+           String novval= jTextField27.getText();
+           String decval= jTextField28.getText();
+
+try{
+
+   PreparedStatement prest;
+
+ String sql ="update time_table set h1='"+junval+"',h2='"+julval+"',h3='"+augval+"',h4='"+septval+"',h5='"+octval+"',h6='"+novval+"',h7='"+decval+"'where t_id='"+id+"'";
+// +"',sept'"+
+  prest= con.prepareStatement(sql);
+
+ prest.execute(sql);
+
+  dispose();
+Admin a = new Admin();
+ a.show();
+ con.close();
+
+//resetData();
+
+id =0;
+
+} catch (SQLException ex) {
+ Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+ }
+
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        studentDetails a = new studentDetails();
+        a.show();
+    }//GEN-LAST:event_jButton5ActionPerformed
 public static int okcancel(String theMessage){
 
 int result=JOptionPane.showConfirmDialog((Component)null,theMessage,"alert",JOptionPane.OK_CANCEL_OPTION);
@@ -1237,6 +1469,8 @@ int result=JOptionPane.showConfirmDialog((Component)null,theMessage,"alert",JOpt
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1258,7 +1492,14 @@ int result=JOptionPane.showConfirmDialog((Component)null,theMessage,"alert",JOpt
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1297,6 +1538,13 @@ int result=JOptionPane.showConfirmDialog((Component)null,theMessage,"alert",JOpt
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField20;
     private javax.swing.JTextField jTextField21;
+    private javax.swing.JTextField jTextField22;
+    private javax.swing.JTextField jTextField23;
+    private javax.swing.JTextField jTextField24;
+    private javax.swing.JTextField jTextField25;
+    private javax.swing.JTextField jTextField26;
+    private javax.swing.JTextField jTextField27;
+    private javax.swing.JTextField jTextField28;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
