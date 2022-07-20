@@ -1032,7 +1032,7 @@ while(rs.next()){
         // TODO add your handling code here:
         Connection con = myConnection();
        try{
-           String sql="INSERT INTO student_info(`name`,`class`,`address`,`phno`,`dob`,`Gname`) VALUES (?,?,?,?,?,?)";
+           String sql="INSERT INTO student_info(`name`,`class`,`address`,`dob`,`phno`,`Gname`) VALUES (?,?,?,?,?,?)";
            PreparedStatement prest;
            prest = con.prepareStatement(sql);
            prest.setString(1,jTextField1.getText()); // n is the variable name for the text field. To add variable name right click the text field->change variablename.
