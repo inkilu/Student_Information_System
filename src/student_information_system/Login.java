@@ -138,7 +138,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 700, 90));
 
         jLabel1.setBackground(new java.awt.Color(204, 204, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/student_information_system/wallpaperflare.com_wallpaper (1).jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/student_information_system/wallpaperflare.com_wallpaper (11).jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 450));
 
         txt_date.setText("Date");
