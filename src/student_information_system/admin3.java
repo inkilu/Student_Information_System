@@ -19,6 +19,7 @@ public class admin3 extends javax.swing.JFrame {
         initComponents();
         jPanel6.setBackground(new Color(0,0,0,80));
          d.setBackground(new Color(0,0,0,80));
+        f.setBackground(new Color(0,0,0,80));
     }
 
     /**
@@ -54,6 +55,32 @@ public class admin3 extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        f = new javax.swing.JPanel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jTextField19 = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        jTextField20 = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        jTextField21 = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        jTextField22 = new javax.swing.JTextField();
+        jLabel36 = new javax.swing.JLabel();
+        jTextField23 = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
+        jTextField24 = new javax.swing.JTextField();
+        jLabel38 = new javax.swing.JLabel();
+        jTextField25 = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
+        jTextField26 = new javax.swing.JTextField();
+        jLabel40 = new javax.swing.JLabel();
+        jTextField27 = new javax.swing.JTextField();
+        jLabel41 = new javax.swing.JLabel();
+        jTextField28 = new javax.swing.JTextField();
+        jButton6 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jLabel30 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -215,6 +242,118 @@ public class admin3 extends javax.swing.JFrame {
         b.addTab("STUDENT INFORMATION", jPanel1);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        f.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel31.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setText("UPDATE ATTENDANCE");
+        f.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 130, 40));
+
+        jLabel32.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel32.setText("JUN");
+        f.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 20));
+
+        jTextField19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField19ActionPerformed(evt);
+            }
+        });
+        f.add(jTextField19, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 100, -1));
+
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setText("JUL");
+        f.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 30, 20));
+        f.add(jTextField20, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 100, -1));
+
+        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel34.setText("AUG");
+        f.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 30, -1));
+
+        jTextField21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField21ActionPerformed(evt);
+            }
+        });
+        f.add(jTextField21, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 100, -1));
+
+        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setText("SEP");
+        f.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 40, 20));
+
+        jTextField22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField22ActionPerformed(evt);
+            }
+        });
+        f.add(jTextField22, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 100, -1));
+
+        jLabel36.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel36.setText("OCT");
+        f.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 30, -1));
+
+        jTextField23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField23ActionPerformed(evt);
+            }
+        });
+        f.add(jTextField23, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 100, -1));
+
+        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel37.setText("NOV");
+        f.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 40, 20));
+        f.add(jTextField24, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 100, -1));
+
+        jLabel38.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel38.setText("DEC");
+        f.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 40, 20));
+        f.add(jTextField25, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 100, -1));
+
+        jLabel39.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel39.setText("JAN");
+        f.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 40, 20));
+
+        jTextField26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField26ActionPerformed(evt);
+            }
+        });
+        f.add(jTextField26, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 100, -1));
+
+        jLabel40.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel40.setText("FEB");
+        f.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 40, 20));
+        f.add(jTextField27, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 100, -1));
+
+        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel41.setText("MAR");
+        f.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, -1, -1));
+        f.add(jTextField28, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 100, -1));
+
+        jButton6.setText("UPDATE");
+        f.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, -1, -1));
+
+        jPanel2.add(f, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 20, 170, 540));
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "STU_ID", "NAME", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC", "JAN", "FEB", "MAR"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable3);
+
+        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 590, 380));
+
+        jLabel30.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel30.setText("ATTENDANCE OF STUDENTS");
+        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, 200, 30));
 
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/student_information_system/wallpaperflare.com_wallpaper (10).jpg"))); // NOI18N
         jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 580));
@@ -539,6 +678,26 @@ public class admin3 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField14ActionPerformed
 
+    private void jTextField19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField19ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField19ActionPerformed
+
+    private void jTextField21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField21ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField21ActionPerformed
+
+    private void jTextField22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField22ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField22ActionPerformed
+
+    private void jTextField23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField23ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField23ActionPerformed
+
+    private void jTextField26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField26ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField26ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -577,11 +736,13 @@ public class admin3 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane b;
     private javax.swing.JPanel d;
+    private javax.swing.JPanel f;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -605,7 +766,19 @@ public class admin3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -622,9 +795,11 @@ public class admin3 extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
@@ -636,7 +811,17 @@ public class admin3 extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField16;
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
+    private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField20;
+    private javax.swing.JTextField jTextField21;
+    private javax.swing.JTextField jTextField22;
+    private javax.swing.JTextField jTextField23;
+    private javax.swing.JTextField jTextField24;
+    private javax.swing.JTextField jTextField25;
+    private javax.swing.JTextField jTextField26;
+    private javax.swing.JTextField jTextField27;
+    private javax.swing.JTextField jTextField28;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
